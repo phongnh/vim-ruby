@@ -5,6 +5,9 @@
 
 let b:is_eruby = 1
 
+if exists("b:eruby_subtype") && b:eruby_subtype != '' && b:eruby_subtype !=? 'eruby'
+  exe "runtime! syntax/".b:eruby_subtype.".vim"
+endif
 unlet! b:current_syntax
 
 syn include @ruby syntax/ruby.vim
